@@ -8,16 +8,9 @@ public class HpHeart : MonoBehaviour
 
     [SerializeField] GameObject emptyHeart;
     [SerializeField] GameObject heart;
-    public void TurnOnHeart()
-    {
-        emptyHeart.SetActive(false);
-    }
-    public void TurnOffHeart()
-    {
-        emptyHeart.SetActive(true);
-    }
-    public void AddHeart()
-    {
 
+    private void Update()
+    {
+        
     }
 }

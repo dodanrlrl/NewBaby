@@ -8,7 +8,7 @@ public class TopDownCharacter : MonoBehaviour
 
     private int CurrentHP = 3;
     private int MaxHP = 10;
-    private float Speed = 5f;
+    private float Speed = 4f;
     private float attackPower = 5;
     private bool m_die = false;//À¯´Ö »ç¸Á ¿©ºÎ
 

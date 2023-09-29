@@ -6,6 +6,11 @@ TagManager:
   tags:
   - Ground
   - Area
+  - Door
+  - Bullet
+  - Puzzle
+  - Box
+  - Wall
   layers:
   - Default
   - TransparentFX

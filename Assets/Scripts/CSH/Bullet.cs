@@ -62,7 +62,7 @@ public class Bullet : MonoBehaviour
         {
             DestroyBullet();
         }
-        else if (other.tag == "Boundary")
+        else if (other.tag == "Boundary" || other.tag == "Wall" || other.tag == "Box")
         {
             DestroyBullet();
         }

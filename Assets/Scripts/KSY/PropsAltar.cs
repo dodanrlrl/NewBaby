@@ -16,7 +16,7 @@ namespace Cainos.PixelArtTopDown_Basic
 
         private void OnTriggerEnter2D(Collider2D other)
         {
-            if (other.CompareTag("Puzzle"))
+            if (other.CompareTag("Box"))
             {
                 targetColor = new Color(1, 1, 1, 1);
             }
@@ -24,7 +24,7 @@ namespace Cainos.PixelArtTopDown_Basic
 
         private void OnTriggerExit2D(Collider2D other)
         {
-            if (other.CompareTag("Puzzle"))
+            if (other.CompareTag("Box"))
             {
                 targetColor = new Color(1, 1, 1, 0);
             }

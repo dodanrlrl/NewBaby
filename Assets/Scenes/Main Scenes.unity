@@ -688,7 +688,7 @@ GameObject:
   - component: {fileID: 93458590}
   m_Layer: 20
   m_Name: Layer 3 - Wall
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2153,6 +2153,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Small Box (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 8150476868300563372, guid: 2e2ac125e54a1e44780363d638b1df34,
+        type: 3}
+      propertyPath: m_TagString
+      value: Box
+      objectReference: {fileID: 0}
     - target: {fileID: 8150476868300563375, guid: 2e2ac125e54a1e44780363d638b1df34,
         type: 3}
       propertyPath: m_RootOrder
@@ -2334,7 +2339,7 @@ GameObject:
   - component: {fileID: 164745942}
   m_Layer: 20
   m_Name: 1 - Wall
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14068,7 +14073,7 @@ GameObject:
   - component: {fileID: 622648754}
   m_Layer: 20
   m_Name: Layer 4 - Wall - 90
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -14941,8 +14946,8 @@ Transform:
   - {fileID: 1942029798}
   - {fileID: 299695233}
   - {fileID: 1003095769}
-  - {fileID: 325093471}
   - {fileID: 685331675}
+  - {fileID: 325093471}
   - {fileID: 875807201}
   m_Father: {fileID: 1394316971}
   m_RootOrder: -1
@@ -15640,7 +15645,7 @@ GameObject:
   - component: {fileID: 699318892}
   m_Layer: 20
   m_Name: Layer 4 - Wall - 270
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -24985,7 +24990,7 @@ GameObject:
   - component: {fileID: 972950759}
   m_Layer: 20
   m_Name: Layer 2 - Wall
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -26784,7 +26789,7 @@ GameObject:
   - component: {fileID: 989430660}
   m_Layer: 21
   m_Name: Layer 3.2 - Wall
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -28683,7 +28688,7 @@ PrefabInstance:
     - target: {fileID: 8150476868300563372, guid: 2e2ac125e54a1e44780363d638b1df34,
         type: 3}
       propertyPath: m_TagString
-      value: Puzzle
+      value: Box
       objectReference: {fileID: 0}
     - target: {fileID: 8150476868300563375, guid: 2e2ac125e54a1e44780363d638b1df34,
         type: 3}
@@ -30276,7 +30281,7 @@ GameObject:
   - component: {fileID: 1290502144}
   m_Layer: 22
   m_Name: Layer 4.3 - Wall
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -31320,7 +31325,7 @@ PrefabInstance:
     - target: {fileID: 8150476868300563372, guid: 2e2ac125e54a1e44780363d638b1df34,
         type: 3}
       propertyPath: m_TagString
-      value: Puzzle
+      value: Box
       objectReference: {fileID: 0}
     - target: {fileID: 8150476868300563375, guid: 2e2ac125e54a1e44780363d638b1df34,
         type: 3}
@@ -33608,7 +33613,7 @@ GameObject:
   - component: {fileID: 1572520806}
   m_Layer: 21
   m_Name: Layer 4.2 - Wall
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -45204,7 +45209,7 @@ GameObject:
   - component: {fileID: 1879215421}
   m_Layer: 20
   m_Name: Layer 4 - Wall
-  m_TagString: Untagged
+  m_TagString: Wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -47583,6 +47588,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Small Box
+      objectReference: {fileID: 0}
+    - target: {fileID: 8150476868300563372, guid: 2e2ac125e54a1e44780363d638b1df34,
+        type: 3}
+      propertyPath: m_TagString
+      value: Box
       objectReference: {fileID: 0}
     - target: {fileID: 8150476868300563375, guid: 2e2ac125e54a1e44780363d638b1df34,
         type: 3}

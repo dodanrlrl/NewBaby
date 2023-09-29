@@ -25,7 +25,7 @@ public class Select : MonoBehaviour
         // 출구 좌표 추가
         Exit.Add(new Vector3(-43.51f, 11.41f, 0));
         Exit.Add(new Vector3(-65.39f, 11.69f, 0));
-        Exit.Add(new Vector3(-95.73f, 1.26f, 0));
+        Exit.Add(new Vector3(-95.73f, 0.86f, 0));
 
         Boss = new Vector3(-127.8f, -7.2f, 0);
 

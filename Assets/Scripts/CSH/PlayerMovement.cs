@@ -9,6 +9,7 @@ public class PlayerMovement : MonoBehaviour
     protected CharacterController Controller;
     protected Rigidbody2D Rigidbody2D;
 
+
     protected Vector2 MovementDirection = Vector2.zero;
 
 
@@ -16,11 +17,13 @@ public class PlayerMovement : MonoBehaviour
     public Transform Body;
     Animator BodyAnimator;
     SpriteRenderer BodySpriteRenderer;
+    TopDownCharacter player;
 
 
 
     protected virtual void Start()
-    {  
+    {
+        player = Gamemanager.Instance.player;
         Controller = GetComponent<CharacterController>();
         Rigidbody2D = GetComponent<Rigidbody2D>();
         BodySpriteRenderer = Body.GetComponent<SpriteRenderer>();
@@ -71,7 +74,7 @@ public class PlayerMovement : MonoBehaviour
         //direction = direction * 5;
 
         //Rigidbody2D.velocity = direction;
-        Rigidbody2D.velocity = TopDownCharacter.Instance.GetSpeed() * direction;
+        Rigidbody2D.velocity = player.GetSpeed() * direction;
     }
 
 }

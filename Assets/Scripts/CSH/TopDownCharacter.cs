@@ -1,61 +1,97 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
-public class TopDownCharacter : MonoBehaviour
+public class TopDownCharacter : MonoBehaviour, IAttackable
 {
-    private static TopDownCharacter _instance = null;
 
-    private int CurrentHP = 3;
-    private int MaxHP = 10;
+    private int maxHP;
+    public int MaxHP
+    {
+        get { return maxHP; }
+        private set { maxHP = Mathf.Clamp(value, 0, 10); }
+    }
+    private int currentHP;
+    public int CurrentHp 
+    {
+        get { return currentHP;}
+        private set { currentHP = Mathf.Clamp(value, 0, maxHP); }
+    }
     private float Speed = 4f;
     private float attackPower = 5;
     private bool m_die = false;//À¯´Ö »ç¸Á ¿©ºÎ
+    private bool isInvincible = false;
+   
+    public Transform Head;
+    public Transform Body;
+    SpriteRenderer BodySpriteRenderer;
+    SpriteRenderer HeadSpriteRenderer;
+    UIManager UI;
 
     // Start is called before the first frame update
-    public static TopDownCharacter Instance
-    {
-        get
-        {
-            if(null == _instance)
-            {
-                return null;
-            }
-            return _instance;
-        }
-    }
-
     private void Awake()
     {
-        if(null == _instance) 
-        {
-            _instance = this;
-            DontDestroyOnLoad(this.gameObject);
-        }
-        else
-        {
-            Destroy(this.gameObject );
-        }
+        HeadSpriteRenderer = Head.GetComponent<SpriteRenderer>();
+        BodySpriteRenderer = Body.GetComponent<SpriteRenderer>();
+    }
+    private void Start()
+    {
+        UI = UIManager.Instance;
+        InitializePlayerInfo();
     }
 
-    public void TakeDamage(int damage)
+    public void TakeDamage(float damage)
     {
-        if (m_die)
+        if(isInvincible || m_die ) { return; }
+        ReduceHP((int)damage);
+        if(!m_die)
         {
-            return;
+            StartCoroutine(Invincible());
         }
+    }
+    IEnumerator Invincible()
+    {
+        isInvincible = true;
+        Color red = new Color(1, 0.2f, 0.2f, 1);
 
-        CurrentHP = Mathf.Clamp(CurrentHP - damage, 0, MaxHP);
+        float time = 0;
+        float flashCD = 0;
 
-        if(CurrentHP == 0)
+        while (time < 1f)
         {
-            m_die = true;
+            time += Time.deltaTime;
+            flashCD += Time.deltaTime;
+            if (flashCD > 0)
+            {
+                if (BodySpriteRenderer.color == Color.white)
+                {
+                    BodySpriteRenderer.color = red;
+                    HeadSpriteRenderer.color = red;
+                }
+                else if (BodySpriteRenderer.color == red)
+                {
+                    BodySpriteRenderer.color = Color.white;
+                    HeadSpriteRenderer.color = Color.white;
+                }
+                flashCD -= 0.13f;
+            }
+            yield return null;
         }
+        isInvincible = false;
+
+    }
+
+    public void ReduceHP(int damage)
+    {
+        currentHP -= damage;
+        UI.hp.UpdateHP();
+        
     }
 
     public void TakeHeal(int heal)
     {
-        CurrentHP = Mathf.Clamp(CurrentHP + heal, 0, MaxHP);
+        currentHP = Mathf.Clamp(currentHP + heal, 0, maxHP);
     }
 
     public void UpAttackPower(float power) 
@@ -70,13 +106,20 @@ public class TopDownCharacter : MonoBehaviour
     {
         return Speed;
     }
-    public int GetMaxHp()
+    public int GetMaxHp()//¾ø¾Ù ¿¹Á¤
     {
-        return MaxHP;
+        return maxHP;
     }
     public int GetCurrentHp()
     {
-        return CurrentHP;
+        return currentHP;
     }
+    public void InitializePlayerInfo()
+    {
+        MaxHP = 6;
+        CurrentHp = MaxHP;
+        UI.InitializeHp();
+    }
+
 
 }

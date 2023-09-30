@@ -115,10 +115,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7499266719127343536}
-  - component: {fileID: 2727064930940990598}
+  - component: {fileID: 1236743992455770979}
   - component: {fileID: 7476106174300375694}
-  - component: {fileID: 6078249897707716305}
   - component: {fileID: 8645897751190425803}
+  - component: {fileID: 6872812577973948000}
   - component: {fileID: 4200225892605933244}
   - component: {fileID: 5247442948710306860}
   - component: {fileID: 1408303011962401570}
@@ -149,7 +149,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2727064930940990598
+--- !u!114 &1236743992455770979
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -161,6 +161,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e97ff4e7f7989c43857690535ee165f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Head: {fileID: 2200714806869268647}
+  Body: {fileID: 9042749800255979200}
 --- !u!114 &7476106174300375694
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -174,19 +176,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Head: {fileID: 2200714806869268647}
---- !u!114 &6078249897707716305
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3137385012117275837}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eb96d6e8a4f78174e8de217e193cef97, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Body: {fileID: 9042749800255979200}
 --- !u!114 &8645897751190425803
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -199,6 +188,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9cadfcaf443e8684992544c4a2706b56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &6872812577973948000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3137385012117275837}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb96d6e8a4f78174e8de217e193cef97, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Body: {fileID: 9042749800255979200}
 --- !u!58 &4200225892605933244
 CircleCollider2D:
   m_ObjectHideFlags: 0

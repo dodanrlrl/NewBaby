@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using UnityEngine;
 
-public class Select : MonoBehaviour
+public class Select : Singleton<Select>
 {
     [Header("# Object ")]
     public GameObject[] characterPrefabs; //  Prefabs 배열
-    private GameObject currentCharacter;   // 현재 캐릭
+    [HideInInspector]
+    public GameObject currentCharacter;   // 현재 캐릭
 
     public List<Vector3> Enter;
     public List<Vector3> Exit;

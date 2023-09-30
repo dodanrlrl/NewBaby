@@ -13,9 +13,12 @@ public class CharacterController : MonoBehaviour
     protected bool IsShooting;
     protected float _timeSinceLastAttack = 0;
 
+    
+
 
     protected virtual void Start()
     {
+        
     }
 
     protected virtual void Update()

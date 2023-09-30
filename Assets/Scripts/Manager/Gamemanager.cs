@@ -22,8 +22,6 @@ public class Gamemanager : MonoBehaviour
         }
     }
     //public player player; //player script는 topDownCharacter 스크립트를 사용할예정이라 바꾸어둠  
-    //public TopDownCharacter playerPrefab;
-    
     public TopDownCharacter player;
 
     //[SerializeField] private Transform spawnPositionsRoot;
@@ -49,7 +47,6 @@ public class Gamemanager : MonoBehaviour
     void Start()
     {
         player = Select.Instance.currentCharacter.GetComponent<TopDownCharacter>(); 
-        //player = Instantiate(playerPrefab);
         rewards.Clear();
     }
 

@@ -17,6 +17,7 @@ public class PlayerMovement : MonoBehaviour
     public Transform Body;
     Animator BodyAnimator;
     SpriteRenderer BodySpriteRenderer;
+
     TopDownCharacter player;
 
 

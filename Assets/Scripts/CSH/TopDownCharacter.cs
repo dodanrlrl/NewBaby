@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System;
+using UnityEngine.InputSystem;
+using UnityEditor.PackageManager;
 
 public class TopDownCharacter : MonoBehaviour, IAttackable
 {
@@ -20,18 +22,25 @@ public class TopDownCharacter : MonoBehaviour, IAttackable
     }
     private float Speed = 4f;
     private float attackPower = 5;
-    private bool m_die = false;//유닛 사망 여부
-    private bool isInvincible = false;
+    [HideInInspector]
+    public bool m_die;//유닛 사망 여부
+    private bool isInvincible;
    
     public Transform Head;
     public Transform Body;
+    SpriteRenderer PlayerSpriteRenderer;
     SpriteRenderer BodySpriteRenderer;
     SpriteRenderer HeadSpriteRenderer;
+    Rigidbody2D PlayerRigidBody;
+    Animator Playeranimator;
     UIManager UI;
 
     // Start is called before the first frame update
     private void Awake()
     {
+        PlayerRigidBody = GetComponent<Rigidbody2D>();
+        Playeranimator = GetComponent<Animator>(); 
+        PlayerSpriteRenderer = GetComponent<SpriteRenderer>();
         HeadSpriteRenderer = Head.GetComponent<SpriteRenderer>();
         BodySpriteRenderer = Body.GetComponent<SpriteRenderer>();
     }
@@ -86,12 +95,24 @@ public class TopDownCharacter : MonoBehaviour, IAttackable
     {
         currentHP -= damage;
         UI.hp.UpdateHP();
+        if(currentHP == 0)
+        {
+            m_die = true;
+            Playeranimator.SetBool("isDie", true);
+            HeadSpriteRenderer.enabled = false;
+            BodySpriteRenderer.enabled = false;
+            PlayerSpriteRenderer.color = Color.gray;
+            PlayerRigidBody.constraints = RigidbodyConstraints2D.FreezeAll;
+            
+        }
         
     }
 
-    public void TakeHeal(int heal)
+    public void TakeHeal(int heal, int maxHP = 0)//체력회복or최대체력 증가
     {
-        currentHP = Mathf.Clamp(currentHP + heal, 0, maxHP);
+        MaxHP += maxHP;
+        currentHP += heal;
+        UI.hp.UpdateHP();
     }
 
     public void UpAttackPower(float power) 
@@ -118,6 +139,8 @@ public class TopDownCharacter : MonoBehaviour, IAttackable
     {
         MaxHP = 6;
         CurrentHp = MaxHP;
+        m_die = false;
+        isInvincible = false;
         UI.InitializeHp();
     }
 

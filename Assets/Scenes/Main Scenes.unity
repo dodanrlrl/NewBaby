@@ -13805,6 +13805,7 @@ MonoBehaviour:
   - {fileID: 3137385012117275837, guid: 6b9ec55df31597342ace3b863fda7038, type: 3}
   - {fileID: 8276516802720628957, guid: 7aad09f947f6a3c4c90284ef8531d3ad, type: 3}
   - {fileID: 8276516802720628957, guid: ce3492f47079f5c479a0654911d50091, type: 3}
+  currentCharacter: {fileID: 0}
   Enter: []
   Exit: []
   Boss: {x: 0, y: 0, z: 0}
@@ -13821,8 +13822,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e385908bd491bff499d72bf9da4e38c4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  playerPrefab: {fileID: 1236743992455770979, guid: 6b9ec55df31597342ace3b863fda7038,
-    type: 3}
   player: {fileID: 1385637533955990099, guid: 6b9ec55df31597342ace3b863fda7038, type: 3}
   rewards:
   - {fileID: 8116866104887311320, guid: 2bed8435a08b95442a483da861c2797d, type: 3}

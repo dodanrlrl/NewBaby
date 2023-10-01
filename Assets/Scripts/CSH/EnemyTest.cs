@@ -5,6 +5,7 @@ using UnityEngine;
 public class EnemyTest : MonoBehaviour
 {
     public TopDownCharacter player;
+    public float Hp = 6;
     // Start is called before the first frame update
 
     void Start()
@@ -25,4 +26,13 @@ public class EnemyTest : MonoBehaviour
             player.TakeDamage(1);
         }
     }
+    public void TakeDamage(float damage)
+    {
+        Hp -= damage;
+        if(Hp <= 0)
+        {
+            Destroy(this.gameObject);
+        }
+    }
+
 }

@@ -2,17 +2,32 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum BulletType
+{
+    BaseBullet,
+    RedBullet,
+    GreenBullet
+}
 public class Bullet : MonoBehaviour
 {
+    BulletType c_BulletType;
     protected float speed = 8f;
+    private float bulletDamage;
+    private float wholeDamage;//bulletType + 플레이어 공격력
+
     Rigidbody2D Rigidbody;
     Animator animator;
+    SpriteRenderer BulletSprite;
 
     WaitForSeconds WaitSeconds = new WaitForSeconds(1f);
     private void Awake()
     {
+        BulletSprite = GetComponent<SpriteRenderer>();   
         Rigidbody = GetComponent<Rigidbody2D>();
         animator = GetComponent<Animator>();
+    }
+    private void Start()
+    {
     }
     public void DestoryBulletInvoke()//낙하 대기
     {
@@ -48,6 +63,26 @@ public class Bullet : MonoBehaviour
         Rigidbody.AddForce(Vector2.right * speed, ForceMode2D.Impulse);
     }
 
+    public void SetBulletInfo(BulletType currentBullet,float playerAttackPower)
+    {
+
+        switch (currentBullet)
+        {
+            case BulletType.BaseBullet:
+                bulletDamage = 1f;//데미지, 스피드 설정 추후 변경
+                BulletSprite.color = Color.white;
+                break;
+            case BulletType.RedBullet:
+                bulletDamage = 2f;
+                BulletSprite.color = Color.red;
+                break;
+            case BulletType.GreenBullet:
+                bulletDamage = 3f;
+                BulletSprite.color = Color.green;
+                break;
+        }
+        wholeDamage = bulletDamage + playerAttackPower;
+    }
 
 
 
@@ -60,6 +95,7 @@ public class Bullet : MonoBehaviour
         }
         else if (other.tag == "Enemy" || other.tag == "Boss")
         {
+            other.GetComponent<EnemyTest>().TakeDamage(wholeDamage);
             DestroyBullet();
         }
         else if (other.tag == "Boundary")

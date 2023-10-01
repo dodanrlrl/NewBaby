@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerShooting : MonoBehaviour
 {
     private CharacterController _controller;
+    TopDownCharacter player;
 
     [Header("Head")]
     public Transform Head;
@@ -18,6 +19,7 @@ public class PlayerShooting : MonoBehaviour
     }
     private void Start()
     {
+        player = Gamemanager.Instance.player;
         _controller.OnShootEvent += Shoot;
     }
 
@@ -25,8 +27,10 @@ public class PlayerShooting : MonoBehaviour
     {
 
         Bullet bullet = ObjectPool.Instance.GetObject();
+        bullet.SetBulletInfo(player.currentBulletType, player.AttackPower);//현재 총알상태로 발사
         bullet.transform.position = transform.position;
-        if(Input.GetKeyDown(KeyCode.UpArrow)) 
+
+        if (Input.GetKeyDown(KeyCode.UpArrow)) 
         {
             HeadAnimator.Play("HeadUp");
             bullet.MoveUp();

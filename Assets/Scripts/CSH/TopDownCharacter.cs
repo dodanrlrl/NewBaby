@@ -21,7 +21,16 @@ public class TopDownCharacter : MonoBehaviour, IAttackable
         private set { currentHP = Mathf.Clamp(value, 0, maxHP); }
     }
     private float Speed = 4f;
-    private float attackPower = 5;
+    public float attackPower;
+    public float AttackPower
+    {
+        get { return attackPower; }
+        private set { attackPower = value; }
+    }
+    public BulletType currentBulletType;
+    public BulletType CurrentBulletType
+    { get { return currentBulletType; } private set { currentBulletType = value; } }
+
     [HideInInspector]
     public bool m_die;//유닛 사망 여부
     private bool isInvincible;
@@ -139,9 +148,16 @@ public class TopDownCharacter : MonoBehaviour, IAttackable
     {
         MaxHP = 6;
         CurrentHp = MaxHP;
+        AttackPower = 1;
+        CurrentBulletType = BulletType.BaseBullet;
         m_die = false;
         isInvincible = false;
         UI.InitializeHp();
+    }
+
+    public void ChangeBullet(BulletType value)//아이템 먹었을때 공격타입 변경위해
+    {
+        CurrentBulletType = value;
     }
 
 

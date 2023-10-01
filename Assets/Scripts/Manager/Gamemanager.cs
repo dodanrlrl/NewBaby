@@ -1,33 +1,52 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.InputSystem.LowLevel;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class Gamemanager : MonoBehaviour
 {
-    public static Gamemanager instance;
-    public player player;
+    private static Gamemanager _instance = null;
+    public static Gamemanager Instance
+    {
+        get
+        {
+            if (null == _instance)
+            {
+                return null;
+            }
+            return _instance;
+        }
+    }
+    //public player player; //player script는 topDownCharacter 스크립트를 사용할예정이라 바꾸어둠  
+    public TopDownCharacter player;
 
-    [SerializeField] private Transform spawnPositionsRoot;
-    private List<Transform> spawnPostions = new List<Transform>();
+    //[SerializeField] private Transform spawnPositionsRoot;
+    //private List<Transform> spawnPostions = new List<Transform>();
     public List<GameObject> rewards = new List<GameObject>();
 
     [SerializeField] private GameObject EndPannel;
 
     void Awake()
     {
-        instance = this;
-
-        for (int i = 0; i < spawnPositionsRoot.childCount; i++)
+        if (null == _instance)
         {
-            spawnPostions.Add(spawnPositionsRoot.GetChild(i));
+            _instance = this;
+            DontDestroyOnLoad(this.gameObject);
         }
+        else
+        {
+            Destroy(this.gameObject);
+        }
+
     }
 
     void Start()
     {
+        player = Select.Instance.currentCharacter.GetComponent<TopDownCharacter>(); 
         rewards.Clear();
     }
 
@@ -38,10 +57,10 @@ public class Gamemanager : MonoBehaviour
     void CreateReward()
     {
         int idx = UnityEngine.Random.Range(0, rewards.Count);
-        int posIdx = UnityEngine.Random.Range(0, spawnPostions.Count);
+        //int posIdx = UnityEngine.Random.Range(0, spawnPostions.Count);
 
         GameObject obj = rewards[idx];
-        Instantiate(obj, spawnPostions[posIdx].position, Quaternion.identity);
+        //Instantiate(obj, spawnPostions[posIdx].position, Quaternion.identity);
     }
     public void RestartGame()
     {
@@ -52,4 +71,7 @@ public class Gamemanager : MonoBehaviour
         //문자열 대체 필요해 보임.
         SceneManager.LoadScene("StartScene");
     }
+
+
+
 }

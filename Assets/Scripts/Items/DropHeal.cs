@@ -8,6 +8,7 @@ public class DropHeal : DropItems
 
     protected override void OnPickedUp(GameObject receiver)
     {
-        TopDownCharacter.Instance.TakeHeal(_item.healthFigures);
+        //TopDownCharacter.Instance.TakeHeal(_item.healthFigures);
+        Gamemanager.Instance.player.TakeHeal(_item.healthFigures);
     }
 }

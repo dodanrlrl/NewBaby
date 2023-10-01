@@ -6,10 +6,12 @@ using UnityEngine.InputSystem;
 public class PlayerController : CharacterController
 {
     private Camera _camera;
+    TopDownCharacter player;
 
     protected override void Start()
     {
         base.Start();
+        player = Gamemanager.Instance.player;
         _camera = Camera.main;
     }
     public void OnMove(InputValue value)
@@ -30,6 +32,7 @@ public class PlayerController : CharacterController
         //}
         if (_timeSinceLastAttack >= 0.2f)
         {
+            if(!player.m_die)
             CallShootEvent();
             _timeSinceLastAttack = 0;
         }

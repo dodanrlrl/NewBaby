@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using UnityEngine;
 
-public class Select : MonoBehaviour
+public class Select : Singleton<Select>
 {
     [Header("# Object ")]
     public GameObject[] characterPrefabs; //  Prefabs 배열
-    private GameObject currentCharacter;   // 현재 캐릭
+    [HideInInspector]
+    public GameObject currentCharacter;   // 현재 캐릭
 
     public List<Vector3> Enter;
     public List<Vector3> Exit;
@@ -29,26 +30,24 @@ public class Select : MonoBehaviour
 
         Boss = new Vector3(-127.8f, -7.2f, 0);
 
-        SpawnCharacter(0);
+        currentCharacter = Instantiate(characterPrefabs[0], Enter[Draw], Quaternion.identity);
+        SpawnCharacter();
     }
 
-    private void SpawnCharacter(int characterIndex)
+    private void SpawnCharacter()
     {
 
-        Destroy(currentCharacter);
-
-        // Enter.Count 는 소환 좌표의 총 갯수를 의미함
+        //Enter.Count 는 소환 좌표의 총 갯수를 의미함 
         // 총 갯수가 0 이 아닐때, 즉 모든 스테이지를 클리어하지 않을때에는 true 그렇지 않으면 false
         if (Enter.Count != 0)
         {
-            // Draw 를 0 ~ 남은 스테이지 수 랜덤 수 출력함 + 캐릭터 삭제 후 생성
             Draw = Random.Range(0, Enter.Count);
-            currentCharacter = Instantiate(characterPrefabs[characterIndex], Enter[Draw], Quaternion.identity);
+            currentCharacter.transform.position = Enter[Draw];
             Enter.RemoveAt(Draw);
         }
         else
         {
-            currentCharacter = Instantiate(characterPrefabs[characterIndex], Boss, Quaternion.identity);
+            currentCharacter.transform.position = Boss;
         }
     }
 
@@ -59,13 +58,13 @@ public class Select : MonoBehaviour
             if (Vector3.Distance(currentCharacter.transform.localPosition, Exit[Draw]) <= 1)
             {
                 Exit.RemoveAt(Draw);
-                SpawnCharacter(0);
+                SpawnCharacter();
             }
         }
     }
     public void ChangeCharacter(int characterIndex)
     {
-        // 캐릭 변경
-        SpawnCharacter(characterIndex);
+        // 캐릭 변경 수정 1차
+        //SpawnCharacter();
     }
 }

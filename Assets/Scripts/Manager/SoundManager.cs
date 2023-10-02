@@ -60,6 +60,10 @@ public class SoundManager : MonoBehaviour
 
         Init();
     }
+    private void Start()
+    {
+        SoundManager.Instance.PlayBGM(BGM.Start);
+    }
     private void Init()
     {
         //배경음 플레이어 초기화

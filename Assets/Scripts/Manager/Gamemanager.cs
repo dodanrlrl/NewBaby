@@ -93,6 +93,6 @@ public class Gamemanager : MonoBehaviour
     {
         yield return new WaitForSeconds(0.5f);
         //VictoryUI
-        SoundManager.Instance.PlayEffect(SoundManager.Effect.Lose);
+        SoundManager.Instance.PlayEffect(SoundManager.Effect.Win);
     }
 }

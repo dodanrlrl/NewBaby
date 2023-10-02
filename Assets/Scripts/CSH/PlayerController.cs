@@ -35,6 +35,7 @@ public class PlayerController : CharacterController
             if(!player.m_die)
             CallShootEvent();
             _timeSinceLastAttack = 0;
+            SoundManager.Instance.PlayEffect(SoundManager.Effect.Range);
         }
 
     }

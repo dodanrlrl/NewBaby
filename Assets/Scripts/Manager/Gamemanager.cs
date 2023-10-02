@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem.LowLevel;
@@ -29,6 +30,7 @@ public class Gamemanager : MonoBehaviour
     public List<GameObject> rewards = new List<GameObject>();
 
     [SerializeField] private GameObject EndPannel;
+    
 
     void Awake()
     {
@@ -48,11 +50,16 @@ public class Gamemanager : MonoBehaviour
     {
         player = Select.Instance.currentCharacter.GetComponent<TopDownCharacter>(); 
         rewards.Clear();
+        
     }
 
     void Update()
     {
-
+        if(player.CurrentHp <= 0)
+        {
+            EndGame();
+        }
+        
     }
     void CreateReward()
     {
@@ -62,16 +69,9 @@ public class Gamemanager : MonoBehaviour
         GameObject obj = rewards[idx];
         //Instantiate(obj, spawnPostions[posIdx].position, Quaternion.identity);
     }
-    public void RestartGame()
+    public void EndGame()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        UIManager.Instance.TurnOnEndPannel();
     }
-    public void GoMenu()
-    {
-        //문자열 대체 필요해 보임.
-        SceneManager.LoadScene("StartScene");
-    }
-
-
-
+    
 }

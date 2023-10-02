@@ -13,4 +13,8 @@ public class HpHeart : MonoBehaviour
     {
         
     }
+    public void DiscountHeart()
+    {
+
+    }
 }

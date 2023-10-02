@@ -66,7 +66,12 @@ public class UIManager : MonoBehaviour
     {
         maps[curMapIndex].color = Color.white;
 
-        if (curMapIndex < maps.Length - 1)
+        if (curMapIndex == maps.Length)
+        {
+            SoundManager.Instance.PlayBGM(SoundManager.BGM.Boss);
+        }
+
+        if (curMapIndex < maps.Length - 1)  //½ÃÀÛ ±âÁØÀ¸·Î, ´ÙÀ½ Ä­, ´Ù´ÙÀ½Ä­, º¸½ºÄ­. ÃÑ ¼¼°³ÀÇ ÀÎµ¦½º
         {
             maps[curMapIndex + 1].gameObject.SetActive(true);
             curMapIndex++;

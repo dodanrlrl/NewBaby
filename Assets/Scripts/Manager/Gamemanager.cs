@@ -57,7 +57,7 @@ public class Gamemanager : MonoBehaviour
     {
         if(player.CurrentHp <= 0)
         {
-            EndGame();
+            GameOver();
         }
         
     }
@@ -69,9 +69,30 @@ public class Gamemanager : MonoBehaviour
         GameObject obj = rewards[idx];
         //Instantiate(obj, spawnPostions[posIdx].position, Quaternion.identity);
     }
-    public void EndGame()
+    public void GameStart()
     {
-        UIManager.Instance.TurnOnEndPannel();
+        SoundManager.Instance.PlayBGM(SoundManager.BGM.Start);
     }
-    
+
+    public void GameOver()
+    {
+        GameOverSetting();
+    }
+    IEnumerator GameOverSetting()
+    {
+        yield return new WaitForSeconds(0.5f);
+        UIManager.Instance.TurnOnEndPannel();
+        SoundManager.Instance.PlayEffect(SoundManager.Effect.Lose);
+    }
+
+    public void GameVictory()
+    {
+        GameVictorySetting();
+    }
+    IEnumerator GameVictorySetting()
+    {
+        yield return new WaitForSeconds(0.5f);
+        //VictoryUI
+        SoundManager.Instance.PlayEffect(SoundManager.Effect.Lose);
+    }
 }

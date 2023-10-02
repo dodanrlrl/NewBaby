@@ -14,6 +14,7 @@ public class SelectBtn : MonoBehaviour
     }
     public void CallStart()
     {
+        SoundManager.Instance.PlayBGM(SoundManager.BGM.InGame);
         SceneManager.LoadScene(StartSceneName);
     }
 }

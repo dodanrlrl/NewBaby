@@ -57,9 +57,11 @@ public class Select : Singleton<Select>
         {
             if (Vector3.Distance(currentCharacter.transform.localPosition, Exit[Draw]) <= 1)
             {
+                UIManager.Instance.MoveMaps();
                 Exit.RemoveAt(Draw);
                 SpawnCharacter();
             }
+           
         }
     }
     public void ChangeCharacter(int characterIndex)

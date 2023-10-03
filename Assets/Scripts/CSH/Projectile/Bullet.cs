@@ -98,6 +98,11 @@ public class Bullet : MonoBehaviour
             other.GetComponent<EnemyTest>().TakeDamage(wholeDamage);
             DestroyBullet();
         }
+        else if (other.tag == "Monster")
+        {
+            other.GetComponent<MonsterTest>().TakeDamage(wholeDamage);
+            DestroyBullet();
+        }
         else if (other.tag == "Boundary")
         {
             DestroyBullet();

@@ -100,7 +100,7 @@ public class Bullet : MonoBehaviour
         }
         else if (other.tag == "Monster")
         {
-            other.GetComponent<MonsterTest>().TakeDamage(wholeDamage);
+            other.GetComponent<Monster>().TakeDamage(wholeDamage);
             DestroyBullet();
         }
         else if (other.tag == "Boundary" || other.tag == "Wall" || other.tag == "Puzzle" || other.tag == "Box")

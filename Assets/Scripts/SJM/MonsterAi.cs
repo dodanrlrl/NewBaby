@@ -4,7 +4,13 @@ using UnityEngine;
 
 public class MonsterAi : MonoBehaviour
 {
-    public Transform target; //당연히 타겟은 플레이어 일 것이다. Transform으로 Target의 위치를 받아온다.
+    Transform target; //당연히 타겟은 플레이어 일 것이다. Transform으로 Target의 위치를 받아온다.
+
+    private void Start()
+    {
+        target = Gamemanager.Instance.player.transform;
+    }
+
     void Update()
     {
         float dis = Vector3.Distance(transform.position, target.position); //내위치와 target의 위치 사이의 거리를 구함

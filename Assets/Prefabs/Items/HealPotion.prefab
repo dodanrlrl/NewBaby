@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 6707969558641308173}
   - component: {fileID: 3293641189594422536}
   - component: {fileID: 2625065855362371241}
+  - component: {fileID: 5296282724141665138}
   m_Layer: 0
   m_Name: HealPotion
   m_TagString: Untagged
@@ -31,7 +32,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &3293641189594422536
 SpriteRenderer:
@@ -73,7 +74,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 3
   m_Sprite: {fileID: -831133822, guid: 4039da17f5a3dfa4795f794f5d8a3d44, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -100,6 +101,41 @@ MonoBehaviour:
   destroyOnPickup: 1
   canBePickupBy:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 8
   pickupSound: {fileID: 8300000, guid: 881e3f52c86c94f26a60718d35627cd8, type: 3}
   _item: {fileID: 11400000, guid: 0da1f77983ef2fd4f99bbe008642ee37, type: 2}
+--- !u!70 &5296282724141665138
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8116866104887311320}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 0.78, y: 1}
+  m_Direction: 0

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5044668843120291613}
   - component: {fileID: 742471711568844721}
   - component: {fileID: 7946164766483248949}
+  - component: {fileID: 8886738939951800907}
   m_Layer: 0
   m_Name: PowerPotion
   m_TagString: Untagged
@@ -31,7 +32,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: -1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &742471711568844721
 SpriteRenderer:
@@ -100,6 +101,41 @@ MonoBehaviour:
   destroyOnPickup: 1
   canBePickupBy:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 8
   pickupSound: {fileID: 8300000, guid: 881e3f52c86c94f26a60718d35627cd8, type: 3}
   _item: {fileID: 11400000, guid: 300c9570406179f40a1ef160ddbe2825, type: 2}
+--- !u!70 &8886738939951800907
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5588331295373188105}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 0.78, y: 1}
+  m_Direction: 0

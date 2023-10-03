@@ -12,6 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6bc5c30aeaeeb864c8ccc1fa4ef1e508, type: 3}
   m_Name: LowPotion_Speed
   m_EditorClassIdentifier: 
+  displayName: "\uD558\uAE09 \uBBFC\uCCA9 \uBB3C\uC57D"
+  description: "\uC18D\uB3C4\uB97C 2 \uC0C1\uC2B9\uC2DC\uD0A8\uB2E4."
+  icon: {fileID: 689473051, guid: 4039da17f5a3dfa4795f794f5d8a3d44, type: 3}
+  dropPrefab: {fileID: 8907837151850140605, guid: a6c864ae6abbb1443a4123637a050cad,
+    type: 3}
   healthFigures: 0
   attackFigures: 0
   speedFigures: 2
+  canStack: 1
+  maxStackAmount: 16

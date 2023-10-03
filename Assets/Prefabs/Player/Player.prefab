@@ -162,6 +162,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7e97ff4e7f7989c43857690535ee165f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  attackPower: 0
+  currentBulletType: 0
   m_die: 0
   Head: {fileID: 2200714806869268647}
   Body: {fileID: 9042749800255979200}
@@ -412,7 +414,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.19215687, g: 0.3019608, b: 0.4745098, a: 0}
+  m_BackGroundColor: {r: 0.78431374, g: 1, b: 0.74509805, a: 0}
   m_projectionMatrixMode: 1
   m_GateFitMode: 2
   m_FOVAxisMode: 0

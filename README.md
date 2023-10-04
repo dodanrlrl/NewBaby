@@ -2,7 +2,7 @@
 
  <img src="https://img.shields.io/badge/Unity-000000?style=flat-square&logo=unity&logoColor=white"/>
  
- <img src="https://img.shields.io/badge/C#-512BD4?style=flat-square&logo=csharp&logoColor=white"/>
+ <img src="https://img.shields.io/badge/C sharp-512BD4?style=flat-square&logo=csharp&logoColor=white"/>
  
 ## 조성훈님
 

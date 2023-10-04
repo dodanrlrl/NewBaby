@@ -13,6 +13,8 @@ public class Monster : MonoBehaviour
     public static float AD;
     Rigidbody2D rigid;
 
+    [Range(0.0f, 1.0f)] public float itemSpawnPer;
+
     void Start()
     {
         HP = 25;
@@ -26,6 +28,8 @@ public class Monster : MonoBehaviour
         // 몬스터의 체력이 0 이하로 떨어지면 파괴
         if (HP <= 0)
         {
+            Gamemanager.Instance.CreateReward(this.transform.position);
+
             Destroy(gameObject);
         }
     }

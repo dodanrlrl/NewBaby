@@ -26,7 +26,6 @@ public class DropItems : MonoBehaviour
     }
     private void OnPickedUp()
     {
-        Debug.Log("object.cs");
         Inventory.Instance.AddItem(_item);
     }
 }

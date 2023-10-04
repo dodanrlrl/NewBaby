@@ -12,7 +12,7 @@ public class ItemSlot
     public Items item;
     public int quantity;
 }
-public class Inventory : InvenEvent
+public class Inventory : MonoBehaviour
 {
     public static Inventory Instance;
     public ItemSlotUI[] uiSlots;
@@ -102,7 +102,7 @@ public class Inventory : InvenEvent
     {
         Instantiate(item.dropPrefab, dropPosition.position, Quaternion.Euler(Vector2.one * UnityEngine.Random.value * 360f));
     }
-    void UpdateUI()
+    public void UpdateUI()
     {
         for (int i = 0; i < slots.Length; i++)
         {

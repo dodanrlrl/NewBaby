@@ -12,7 +12,7 @@ public class ItemSlot
     public Items item;
     public int quantity;
 }
-public class Inventory : InvenEvent
+public class Inventory : MonoBehaviour
 {
     public static Inventory Instance;
     public ItemSlotUI[] uiSlots;

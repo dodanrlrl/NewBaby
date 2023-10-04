@@ -18,11 +18,10 @@ public class Monster : MonoBehaviour
 
     void Start()
     {
-        HP = 1;
+        HP = 100;
         rigid = GetComponent<Rigidbody2D>();
         speed = 3;
         AD = 10.0f;
-        Debug.Log(GameObject.Find("Door1"));
         sel = FindObjectOfType<Select>();
         // select = GetComponent<Gameobject>().Nex;
     }
@@ -35,7 +34,6 @@ public class Monster : MonoBehaviour
             Select.Dies = Select.Dies += 1;
             Destroy(gameObject);
         }
-        Debug.Log(Select.Dies);
         if (Select.Dies >= 5)
         {
             sel.NextStage();

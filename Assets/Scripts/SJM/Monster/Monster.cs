@@ -8,7 +8,7 @@ public class Monster : MonoBehaviour
 {
 
 
-    public static float HP;
+    public float HP;
     public static float speed;
     public static float AD;
     Rigidbody2D rigid;

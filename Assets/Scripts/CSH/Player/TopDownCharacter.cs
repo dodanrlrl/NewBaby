@@ -59,12 +59,13 @@ public class TopDownCharacter : MonoBehaviour, IAttackable
         InitializePlayerInfo();
     }
 
-    public void TakeDamage(float damage)
+    public void TakeDamage(float damage,Vector2 direction)
     {
         if(isInvincible || m_die ) { return; }
         ReduceHP((int)damage);
         if(!m_die)
         {
+            StartCoroutine(knockBackCoroutine(direction));
             StartCoroutine(Invincible());
         }
     }
@@ -98,6 +99,23 @@ public class TopDownCharacter : MonoBehaviour, IAttackable
         }
         isInvincible = false;
 
+    }
+    IEnumerator knockBackCoroutine(Vector2 force)
+    {
+
+        Speed = 2f;
+
+        float length = 0.3f;
+        float overTime = 0.1f;
+        float timeleft = overTime;
+        while (timeleft > 0)
+        {
+            transform.Translate(force * length * Time.deltaTime / overTime);
+            timeleft -= Time.deltaTime;
+            yield return null;
+        }
+
+        Speed = 4f;
     }
 
     public void ReduceHP(int damage)

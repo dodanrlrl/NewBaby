@@ -23,7 +23,7 @@ public class EnemyTest : MonoBehaviour
         if(other.gameObject.tag == "Player")
         {
             Debug.Log("Ãæµ¹");
-            player.TakeDamage(1);
+            //player.TakeDamage(1);
         }
     }
     public void TakeDamage(float damage)

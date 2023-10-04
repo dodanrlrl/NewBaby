@@ -48,11 +48,11 @@ public class Monster : MonoBehaviour
     {
         if (other.gameObject.tag == "Player")
         {
-            //Debug.Log("�浹");
-            Gamemanager.Instance.player.TakeDamage(1);
+            Vector3 force = Vector3.Normalize(other.transform.position - transform.position);
+            Gamemanager.Instance.player.TakeDamage(1,force*2);
         }
     }
-    // �ٸ� ��ũ��Ʈ���� ȣ���Ͽ� ������ ü���� ���ҽ�Ű�� �޼���
+
     public void TakeDamage(float damage)
     {
         HP -= damage;

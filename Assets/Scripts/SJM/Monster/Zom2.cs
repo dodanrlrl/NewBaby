@@ -9,8 +9,6 @@ public class Zom2 : MonoBehaviour
     public static float AD;
     Rigidbody2D rigid;
 
-    [Range(0.0f, 1.0f)] public float itemSpawnPer;
-
     void Start()
     {
         HP = 50;

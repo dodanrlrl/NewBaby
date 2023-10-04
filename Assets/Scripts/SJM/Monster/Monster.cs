@@ -42,6 +42,7 @@ public class Monster : MonoBehaviour
             Select.Dies = 0;
 
         }
+        rigid.velocity = Vector3.zero;//충돌시 날라가는거 방지
 
     }
     private void OnCollisionEnter2D(Collision2D other)

@@ -35,7 +35,7 @@
                 {
                     "name": "Inventory",
                     "type": "Button",
-                    "id": "c445c94b-b63f-46e9-96cc-c41f5d3f6dd9",
+                    "id": "a76ac9a0-6810-4e51-8c25-c221101ccee3",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -111,17 +111,6 @@
                 },
                 {
                     "name": "",
-                    "id": "730583fc-8eea-4436-a7a4-c36032a628bc",
-                    "path": "<Keyboard>/tab",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "Inventory",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "65b0d674-8e18-49ba-8efd-3450fe63829b",
                     "path": "<Keyboard>/upArrow",
                     "interactions": "",
@@ -161,6 +150,17 @@
                     "processors": "",
                     "groups": "Keyboard&Mouse",
                     "action": "Shoot",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "eb0044ab-fda4-4fb6-8f81-9bdfe816698d",
+                    "path": "<Keyboard>/tab",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Inventory",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

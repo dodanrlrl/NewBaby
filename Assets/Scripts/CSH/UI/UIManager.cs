@@ -77,4 +77,16 @@ public class UIManager : MonoBehaviour
             curMapIndex++;
         }
     }
+    public void PressUseButton()
+    {
+        if (Inventory.Instance.slots[Inventory.Instance.selectedItemIndex].quantity != 0)
+        {
+            Gamemanager.Instance.player.TakeHeal(Inventory.Instance.selectedItem.item.healthFigures, 0);
+            Gamemanager.Instance.player.GetComponent<TopDownCharacter>().UpAttackPower(Inventory.Instance.selectedItem.item.attackFigures);
+            Gamemanager.Instance.player.GetComponent<TopDownCharacter>().UpSpeed(Inventory.Instance.selectedItem.item.speedFigures);
+            Inventory.Instance.slots[Inventory.Instance.selectedItemIndex].quantity--;
+        }
+        if (Inventory.Instance.slots[Inventory.Instance.selectedItemIndex].quantity == 0)
+            Inventory.Instance.ClearSlot(Inventory.Instance.selectedItemIndex);
+    }
 }

@@ -95,7 +95,7 @@ public class Bullet : MonoBehaviour
         }
         else if (other.tag == "Enemy" || other.tag == "Boss")
         {
-            other.GetComponent<EnemyTest>().TakeDamage(wholeDamage);
+            other.GetComponent<Zom2>().TakeDamage(wholeDamage);
             DestroyBullet();
         }
         else if (other.tag == "Monster")

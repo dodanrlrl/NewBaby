@@ -27,6 +27,14 @@ public class Zom2 : MonoBehaviour
             Destroy(gameObject);
         }
     }
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.gameObject.tag == "Player")
+        {
+            Vector3 force = Vector3.Normalize(other.transform.position - transform.position);
+            Gamemanager.Instance.player.TakeDamage(1, force * 2);
+        }
+    }
 
     // 다른 스크립트에서 호출하여 몬스터의 체력을 감소시키는 메서드
     public void TakeDamage(float damage)

@@ -17,7 +17,7 @@ MonoBehaviour:
   icon: {fileID: -831133822, guid: 4039da17f5a3dfa4795f794f5d8a3d44, type: 3}
   dropPrefab: {fileID: 8116866104887311320, guid: 2bed8435a08b95442a483da861c2797d,
     type: 3}
-  healthFigures: 30
+  healthFigures: 1
   attackFigures: 0
   speedFigures: 0
   canStack: 1

@@ -14,7 +14,7 @@ public class Zom2Ai : MonoBehaviour
     void Update()
     {
         float dis = Vector3.Distance(transform.position, target.position); //내위치와 target의 위치 사이의 거리를 구함
-        if (dis <= 10) // 거리가 10칸 안으로 좁혀졌으면 쫒기 시작
+        if (dis <= 13) // 거리가 10칸 안으로 좁혀졌으면 쫒기 시작
         {
             Move();
         }

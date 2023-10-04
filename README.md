@@ -1,4 +1,4 @@
-![header](https://capsule-render.vercel.app/api?type=wave&color=auto&height=300&section=header&text=Babyjak%20IsaacLike&fontSize=90)
+![header](https://capsule-render.vercel.app/api?type=wave&color=auto&height=300&section=header&text=Babyjak%20(IsaacLike)&fontSize=90)
 
 
 ## 조성훈님

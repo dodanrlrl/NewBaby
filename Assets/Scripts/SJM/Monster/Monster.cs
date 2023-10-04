@@ -18,7 +18,7 @@ public class Monster : MonoBehaviour
 
     void Start()
     {
-        HP = 100;
+        HP = 1;
         rigid = GetComponent<Rigidbody2D>();
         speed = 3;
         AD = 10.0f;
@@ -34,6 +34,7 @@ public class Monster : MonoBehaviour
             Select.Dies = Select.Dies += 1;
             Destroy(gameObject);
         }
+        //Debug.Log(Select.Dies);
         if (Select.Dies >= 5)
         {
             sel.NextStage();

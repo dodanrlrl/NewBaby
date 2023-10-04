@@ -10,8 +10,8 @@ GameObject:
   m_Component:
   - component: {fileID: 5044668843120291613}
   - component: {fileID: 742471711568844721}
-  - component: {fileID: 7946164766483248949}
   - component: {fileID: 8886738939951800907}
+  - component: {fileID: -3500519170946492339}
   m_Layer: 0
   m_Name: PowerPotion
   m_TagString: Untagged
@@ -74,7 +74,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_Sprite: {fileID: 1449415228, guid: 4039da17f5a3dfa4795f794f5d8a3d44, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -86,24 +86,6 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &7946164766483248949
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5588331295373188105}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: df10a706959fc33478a0fd86169daf3c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  destroyOnPickup: 1
-  canBePickupBy:
-    serializedVersion: 2
-    m_Bits: 8
-  pickupSound: {fileID: 8300000, guid: 881e3f52c86c94f26a60718d35627cd8, type: 3}
-  _item: {fileID: 11400000, guid: 300c9570406179f40a1ef160ddbe2825, type: 2}
 --- !u!70 &8886738939951800907
 CapsuleCollider2D:
   m_ObjectHideFlags: 0
@@ -139,3 +121,20 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 0.78, y: 1}
   m_Direction: 0
+--- !u!114 &-3500519170946492339
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5588331295373188105}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7c64ef71927a7cb489c0e41c35aa65bc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  destroyOnPickup: 1
+  canBePickupBy:
+    serializedVersion: 2
+    m_Bits: 8
+  _item: {fileID: 11400000, guid: 56856473b52908642a382dddba210c13, type: 2}

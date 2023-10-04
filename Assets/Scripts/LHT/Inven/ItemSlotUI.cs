@@ -41,8 +41,9 @@ public class ItemSlotUI : MonoBehaviour
         icon.gameObject.SetActive(false);
         quantityText.text = string.Empty;
     }
-    public void OnButtonClick()
+    public void OnBtnClick()
     {
-        Inventory.instance.SelectItem(index);
+        Debug.Log("´­¸²");
+        Inventory.Instance.SelectItem(index);
     }
 }

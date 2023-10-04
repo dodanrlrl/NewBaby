@@ -1,9 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.InputSystem;
+using UnityEngine.InputSystem.Interactions;
 
 public class ItemSlot
 {
@@ -27,19 +29,16 @@ public class Inventory : Singleton<Inventory>
     public TextMeshProUGUI selectedItemStatValues;
     public GameObject useButton;
 
-    private int curEquipIndex;
-
     [Header("Events")]
     public UnityEvent onOpenInventory;
     public UnityEvent onCloseInventory;
 
-    public static Inventory instance;
-    private void Awake()
-    {
-        instance = this;
-    }
     // Start is called before the first frame update
     void Start()
+    {
+        
+    }
+    private void OnEnable()
     {
         inventoryWindow.SetActive(false);
         slots = new ItemSlot[uiSlots.Length];
@@ -47,7 +46,6 @@ public class Inventory : Singleton<Inventory>
         for (int i = 0; i < slots.Length; i++)
         {
             slots[i] = new ItemSlot();
-
             uiSlots[i].index = i;
             uiSlots[i].Clear();
         }
@@ -97,14 +95,16 @@ public class Inventory : Singleton<Inventory>
     }
     void ThrowItem(Items item)
     {
-        Instantiate(item.dropPrefab, dropPosition.position, Quaternion.Euler(Vector3.one * UnityEngine.Random.value * 360f));
+        Instantiate(item.dropPrefab, dropPosition.position, Quaternion.Euler(Vector2.one * UnityEngine.Random.value * 360f));
     }
     void UpdateUI()
     {
         for (int i = 0; i < slots.Length; i++)
         {
-            if (slots[i] != null)
+            if (slots[i].quantity != 0)
+            {
                 uiSlots[i].Set(slots[i]);
+            }
             else
                 uiSlots[i].Clear();
         }
@@ -114,7 +114,9 @@ public class Inventory : Singleton<Inventory>
         for (int i = 0; i < slots.Length; i++)
         {
             if (slots[i].item == item && slots[i].quantity < item.maxStackAmount)
+            {
                 return slots[i];
+            }
         }
 
         return null;
@@ -131,7 +133,7 @@ public class Inventory : Singleton<Inventory>
     }
     public void SelectItem(int index)
     {
-        if (slots[index].item == null)
+        if (slots[index].quantity == 0)
             return;
 
         selectedItem = slots[index];
@@ -158,6 +160,20 @@ public class Inventory : Singleton<Inventory>
     }
     public void PressUseButton()
     {
-        Debug.Log("´©¸§");
+        if(slots[selectedItemIndex].quantity != 0)
+        {
+            gameObject.GetComponent<TopDownCharacter>().TakeHeal(selectedItem.item.healthFigures, 0);
+            gameObject.GetComponent<TopDownCharacter>().UpAttackPower(selectedItem.item.attackFigures);
+            gameObject.GetComponent<TopDownCharacter>().UpSpeed(selectedItem.item.speedFigures);
+            slots[selectedItemIndex].quantity--;
+        }
+        if (slots[selectedItemIndex].quantity == 0)
+            ClearSlot(selectedItemIndex);
+    }
+    public void ClearSlot(int index)
+    {
+        slots[index].item = null;
+        slots[index].quantity = 0;
+        uiSlots[index].Clear();
     }
 }

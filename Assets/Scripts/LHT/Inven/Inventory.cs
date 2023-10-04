@@ -102,7 +102,7 @@ public class Inventory : MonoBehaviour
     {
         Instantiate(item.dropPrefab, dropPosition.position, Quaternion.Euler(Vector2.one * UnityEngine.Random.value * 360f));
     }
-    void UpdateUI()
+    public void UpdateUI()
     {
         for (int i = 0; i < slots.Length; i++)
         {

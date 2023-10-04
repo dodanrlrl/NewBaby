@@ -121,6 +121,11 @@ public class TopDownCharacter : MonoBehaviour, IAttackable
     {
         MaxHP += maxHP;
         currentHP += heal;
+
+        if(currentHP > MaxHP)
+        {
+            currentHP = MaxHP;
+        }
         UI.hp.UpdateHP();
     }
 

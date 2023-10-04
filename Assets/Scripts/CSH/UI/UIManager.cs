@@ -85,6 +85,7 @@ public class UIManager : MonoBehaviour
             Gamemanager.Instance.player.GetComponent<TopDownCharacter>().UpAttackPower(Inventory.Instance.selectedItem.item.attackFigures);
             Gamemanager.Instance.player.GetComponent<TopDownCharacter>().UpSpeed(Inventory.Instance.selectedItem.item.speedFigures);
             Inventory.Instance.slots[Inventory.Instance.selectedItemIndex].quantity--;
+            Inventory.Instance.UpdateUI();
         }
         if (Inventory.Instance.slots[Inventory.Instance.selectedItemIndex].quantity == 0)
             Inventory.Instance.ClearSlot(Inventory.Instance.selectedItemIndex);

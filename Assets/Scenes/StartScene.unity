@@ -1505,6 +1505,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 7e0a8de137a8d6e45bb3efb84b371ac8, type: 3}
   - {fileID: 8300000, guid: ebb12386647523d48b64bb2e220615b2, type: 3}
   - {fileID: 8300000, guid: 8f04bd961650d294eab66805d15cc3b3, type: 3}
+  - {fileID: 8300000, guid: 881e3f52c86c94f26a60718d35627cd8, type: 3}
   effectVolume: 0.08
   channels: 16
 --- !u!4 &835604211

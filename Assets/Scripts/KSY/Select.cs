@@ -12,8 +12,15 @@ public class Select : Singleton<Select>
 
     public List<Vector3> Enter;
     public List<Vector3> Exit;
+    public List<GameObject> Door;
     public Vector3 Boss;
     public int Draw;
+
+    public static int Dies = 0;
+
+    [Header("# Doors ")]
+
+    public GameObject[] Doors;
 
     private void Start()
     {
@@ -32,6 +39,9 @@ public class Select : Singleton<Select>
 
         currentCharacter = Instantiate(characterPrefabs[0], Enter[Draw], Quaternion.identity);
         SpawnCharacter();
+        Door.Add(GameObject.Find("Door1"));
+        Door.Add(GameObject.Find("Door2"));
+        Door.Add(GameObject.Find("Door3"));
     }
 
     private void SpawnCharacter()
@@ -64,6 +74,13 @@ public class Select : Singleton<Select>
            
         }
     }
+
+    public void NextStage()
+    {
+         Door[Draw].SetActive(false);
+         Door.RemoveAt(Draw);
+    }
+
     public void ChangeCharacter(int characterIndex)
     {
         // 캐릭 변경 수정 1차

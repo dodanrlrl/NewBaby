@@ -31,11 +31,11 @@ public class Zom2Ai : MonoBehaviour
         // 이미지의 방향을 결정하여 좌우 반전을 적용합니다.
         if (direction.x > 0) // 플레이어가 오른쪽에 있을 때
         {
-            transform.localScale = new Vector3(3, 3, 3); // 이미지를 원래 방향으로 설정
+            transform.localScale = new Vector3(2, 2, 2); // 이미지를 원래 방향으로 설정
         }
         else if (direction.x < 0) // 플레이어가 왼쪽에 있을 때
         {
-            transform.localScale = new Vector3(-3, 3, 3); // 이미지를 좌우 반전
+            transform.localScale = new Vector3(-2, 2, 2); // 이미지를 좌우 반전
         }
 
         // 이제 방향에 따라 이동합니다.

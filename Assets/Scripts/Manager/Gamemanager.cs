@@ -49,9 +49,7 @@ public class Gamemanager : MonoBehaviour
 
     void Start()
     {
-        player = Select.Instance.currentCharacter.GetComponent<TopDownCharacter>(); 
-        rewards.Clear();
-        
+        player = Select.Instance.currentCharacter.GetComponent<TopDownCharacter>();
     }
 
     void Update()

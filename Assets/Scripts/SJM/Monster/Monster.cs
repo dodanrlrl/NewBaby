@@ -18,9 +18,10 @@ public class Monster : MonoBehaviour
 
     void Start()
     {
-        HP = 1;
+
+        HP = 25;
         rigid = GetComponent<Rigidbody2D>();
-        speed = 3;
+        speed = 1.5f;
         AD = 10.0f;
         sel = FindObjectOfType<Select>();
         // select = GetComponent<Gameobject>().Nex;
@@ -28,9 +29,9 @@ public class Monster : MonoBehaviour
 
     void Update()
     {
-        // ¸ó½ºÅÍÀÇ Ã¼·ÂÀÌ 0 ÀÌÇÏ·Î ¶³¾îÁö¸é ÆÄ±«
         if (HP <= 0)
         {
+            Gamemanager.Instance.CreateReward(this.transform.position);
             Select.Dies = Select.Dies += 1;
             Destroy(gameObject);
         }
@@ -43,8 +44,15 @@ public class Monster : MonoBehaviour
         }
 
     }
-
-    // ´Ù¸¥ ½ºÅ©¸³Æ®¿¡¼­ È£ÃâÇÏ¿© ¸ó½ºÅÍÀÇ Ã¼·ÂÀ» °¨¼Ò½ÃÅ°´Â ¸Ş¼­µå
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.gameObject.tag == "Player")
+        {
+            //Debug.Log("ï¿½æµ¹");
+            Gamemanager.Instance.player.TakeDamage(1);
+        }
+    }
+    // ï¿½Ù¸ï¿½ ï¿½ï¿½Å©ï¿½ï¿½Æ®ï¿½ï¿½ï¿½ï¿½ È£ï¿½ï¿½ï¿½Ï¿ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Ã¼ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ò½ï¿½Å°ï¿½ï¿½ ï¿½Ş¼ï¿½ï¿½ï¿½
     public void TakeDamage(float damage)
     {
         HP -= damage;

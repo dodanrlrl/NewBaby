@@ -43,7 +43,6 @@ public class ItemSlotUI : MonoBehaviour
     }
     public void OnBtnClick()
     {
-        Debug.Log("´­¸²");
         Inventory.Instance.SelectItem(index);
     }
 }

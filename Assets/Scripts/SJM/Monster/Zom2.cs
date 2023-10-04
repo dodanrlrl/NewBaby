@@ -22,6 +22,8 @@ public class Zom2 : MonoBehaviour
         // 몬스터의 체력이 0 이하로 떨어지면 파괴
         if (HP <= 0)
         {
+            Gamemanager.Instance.CreateReward(this.transform.position);
+
             Destroy(gameObject);
         }
     }

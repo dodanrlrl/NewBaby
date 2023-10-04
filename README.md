@@ -17,7 +17,7 @@
 </details>
 
 
-## [서재민님][SJM_Git]
+## [서재민님][SJM's_Git]
 
 [SJM's_Git]: https://github.com/SeoJaeMin619
 

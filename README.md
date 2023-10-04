@@ -17,7 +17,9 @@
 </details>
 
 
-## 권선영님
+## [서재민님][SJM_Git]
+
+[SJM's_Git]: https://github.com/SeoJaeMin619
 
 <details>
 <summary>
@@ -27,7 +29,9 @@
 </details>
 
 
-## 서재민님
+## [권선영님][GSY's_Git]
+
+[GSY's_Git]: https://github.com/tealss
 
 <details>
 <summary>
@@ -37,7 +41,9 @@
 </details>
 
 
-## 이하택님
+## [이하택님][LHT's_Git]
+
+[LHT's_Git]: https://github.com/LeeHataeg
 
 <details>
 <summary>

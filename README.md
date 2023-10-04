@@ -28,7 +28,6 @@
 <br>
 <br>
 
----
 
 ## 담당 기능
 ![image](https://github.com/dodanrlrl/NewBaby/assets/139848355/4eecc00e-7195-4887-b9ff-fe99e39af88f)
@@ -37,7 +36,6 @@
 <br>
 <br>
 
----
 
 ## 와이어 프레임
 ![image](https://github.com/dodanrlrl/NewBaby/assets/139848355/c21a2621-a08f-4a87-bbc3-6e5344294dca)
@@ -48,8 +46,6 @@
 <br>
 <br>
 
----
----
 
 ## [조성훈님][JSH's_Git]
 
@@ -66,7 +62,6 @@
 <br>
 <br>
 
----
 
 ## [서재민님][SJM's_Git]
 
@@ -83,7 +78,6 @@
 <br>
 <br>
 
----
 
 ## [권선영님][GSY's_Git]
 
@@ -99,7 +93,6 @@
 <br>
 <br>
 
----
 
 ## [이하택님][LHT's_Git]
 

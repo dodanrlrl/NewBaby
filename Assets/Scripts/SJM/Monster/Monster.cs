@@ -15,9 +15,9 @@ public class Monster : MonoBehaviour
 
     void Start()
     {
-        HP = 100;
+        HP = 25;
         rigid = GetComponent<Rigidbody2D>();
-        speed = 3;
+        speed = 1.5f;
         AD = 10.0f;
     }
 
@@ -29,7 +29,14 @@ public class Monster : MonoBehaviour
             Destroy(gameObject);
         }
     }
-
+    private void OnCollisionEnter2D(Collision2D other)
+    {
+        if (other.gameObject.tag == "Player")
+        {
+            //Debug.Log("충돌");
+            Gamemanager.Instance.player.TakeDamage(1);
+        }
+    }
     // 다른 스크립트에서 호출하여 몬스터의 체력을 감소시키는 메서드
     public void TakeDamage(float damage)
     {

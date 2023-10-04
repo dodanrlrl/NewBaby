@@ -9,6 +9,7 @@ public class CharacterController : MonoBehaviour
 {
     public event Action<Vector2> OnMoveEvent;
     public event Action OnShootEvent;
+    public event Action OnInventoryEvent;
 
     protected bool IsShooting;
     protected float _timeSinceLastAttack = 0;
@@ -37,5 +38,9 @@ public class CharacterController : MonoBehaviour
     public void CallShootEvent()
     {
         OnShootEvent?.Invoke();
+    }
+    public void CallInventoryEvent()
+    {
+        OnInventoryEvent?.Invoke();
     }
 }

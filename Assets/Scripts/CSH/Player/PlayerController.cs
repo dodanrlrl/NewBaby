@@ -39,5 +39,8 @@ public class PlayerController : CharacterController
         }
 
     }
-
+    public void OnInventory()
+    {
+        Inventory.Instance.Toggle();
+    }
 }

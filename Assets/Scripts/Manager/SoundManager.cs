@@ -31,7 +31,8 @@ public class SoundManager : MonoBehaviour
         Range,
         Lose,
         Select,
-        Win
+        Win,
+        Pickup
     }
 
     private static SoundManager _instance;

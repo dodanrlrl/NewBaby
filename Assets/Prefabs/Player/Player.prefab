@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 9042749800255979200}
   - component: {fileID: 3337148076628218457}
   - component: {fileID: 3256666103462553837}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Body
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -124,7 +124,8 @@ GameObject:
   - component: {fileID: 1408303011962401570}
   - component: {fileID: -25758616620701790}
   - component: {fileID: 5808864009805530875}
-  m_Layer: 0
+  - component: {fileID: 5829630423462679242}
+  m_Layer: 3
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -148,7 +149,7 @@ Transform:
   - {fileID: 3693900397038891974}
   - {fileID: 1467769721056497880}
   m_Father: {fileID: 0}
-  m_RootOrder: 0
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1236743992455770979
 MonoBehaviour:
@@ -371,6 +372,32 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &5829630423462679242
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3137385012117275837}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 476002a14c87152439bb060cd136df7a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  uiSlots: []
+  inventoryWindow: {fileID: 0}
+  dropPosition: {fileID: 0}
+  selectedItemName: {fileID: 0}
+  selectedItemDiscription: {fileID: 0}
+  selectedItemStatNames: {fileID: 0}
+  selectedItemStatValues: {fileID: 0}
+  useButton: {fileID: 0}
+  onOpenInventory:
+    m_PersistentCalls:
+      m_Calls: []
+  onCloseInventory:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &3363706275801488347
 GameObject:
   m_ObjectHideFlags: 0
@@ -382,7 +409,7 @@ GameObject:
   - component: {fileID: 1467769721056497880}
   - component: {fileID: 4221270787770980556}
   - component: {fileID: 895686254526645088}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Main Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -474,7 +501,7 @@ GameObject:
   - component: {fileID: 2200714806869268647}
   - component: {fileID: 9123032360696350307}
   - component: {fileID: 501011654389984465}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Head
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -580,7 +607,7 @@ GameObject:
   - component: {fileID: 3693900397038891974}
   - component: {fileID: 911210403602150113}
   - component: {fileID: 8053835930371691622}
-  m_Layer: 0
+  m_Layer: 3
   m_Name: Area
   m_TagString: Area
   m_Icon: {fileID: 0}

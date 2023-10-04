@@ -12,8 +12,9 @@ public class ItemSlot
     public Items item;
     public int quantity;
 }
-public class Inventory : Singleton<Inventory>
+public class Inventory : InvenEvent
 {
+    public static Inventory Instance;
     public ItemSlotUI[] uiSlots;
     public ItemSlot[] slots;
 
@@ -22,7 +23,7 @@ public class Inventory : Singleton<Inventory>
 
     [Header("Selected Item")]
     public ItemSlot selectedItem;
-    private int selectedItemIndex;
+    public int selectedItemIndex;
     public TextMeshProUGUI selectedItemName;
     public TextMeshProUGUI selectedItemDiscription;
     public TextMeshProUGUI selectedItemStatNames;
@@ -33,6 +34,10 @@ public class Inventory : Singleton<Inventory>
     public UnityEvent onOpenInventory;
     public UnityEvent onCloseInventory;
 
+    private void Awake()
+    {
+        Instance = this;
+    }
     // Start is called before the first frame update
     void Start()
     {
@@ -157,18 +162,6 @@ public class Inventory : Singleton<Inventory>
         selectedItemStatValues.text = string.Empty;
 
         useButton.SetActive(false);
-    }
-    public void PressUseButton()
-    {
-        if(slots[selectedItemIndex].quantity != 0)
-        {
-            gameObject.GetComponent<TopDownCharacter>().TakeHeal(selectedItem.item.healthFigures, 0);
-            gameObject.GetComponent<TopDownCharacter>().UpAttackPower(selectedItem.item.attackFigures);
-            gameObject.GetComponent<TopDownCharacter>().UpSpeed(selectedItem.item.speedFigures);
-            slots[selectedItemIndex].quantity--;
-        }
-        if (slots[selectedItemIndex].quantity == 0)
-            ClearSlot(selectedItemIndex);
     }
     public void ClearSlot(int index)
     {

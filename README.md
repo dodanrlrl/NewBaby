@@ -32,7 +32,8 @@
 [GSY's_Git]: https://github.com/tealss
 
 <details>
-<summary>
+<summary>![korong2](https://github.com/dodanrlrl/NewBaby/assets/139848355/44fb86f7-49b7-41f7-979f-181b9fceeaba)
+
  토글 제목
 </summary>
   토글 안의 내용

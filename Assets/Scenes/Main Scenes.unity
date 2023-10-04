@@ -15572,6 +15572,7 @@ MonoBehaviour:
   - {fileID: 8907837151850140605, guid: a6c864ae6abbb1443a4123637a050cad, type: 3}
   - {fileID: 8116866104887311320, guid: 2bed8435a08b95442a483da861c2797d, type: 3}
   - {fileID: 8116866104887311320, guid: 2bed8435a08b95442a483da861c2797d, type: 3}
+  dropPer: 50
   EndPannel: {fileID: 1172907259}
 --- !u!4 &606578824
 Transform:

@@ -28,6 +28,7 @@ public class Gamemanager : MonoBehaviour
     //[SerializeField] private Transform spawnPositionsRoot;
     //private List<Transform> spawnPostions = new List<Transform>();
     public List<GameObject> rewards = new List<GameObject>();
+    [Range(0, 100)] public int dropPer;
 
     [SerializeField] private GameObject EndPannel;
     
@@ -61,13 +62,15 @@ public class Gamemanager : MonoBehaviour
         }
         
     }
-    void CreateReward()
+    public void CreateReward(Vector3 spawnPosition)
     {
-        int idx = UnityEngine.Random.Range(0, rewards.Count);
-        //int posIdx = UnityEngine.Random.Range(0, spawnPostions.Count);
+        if(UnityEngine.Random.Range(0, 100) < dropPer)
+        {
+            int idx = UnityEngine.Random.Range(0, rewards.Count);
 
-        GameObject obj = rewards[idx];
-        //Instantiate(obj, spawnPostions[posIdx].position, Quaternion.identity);
+            GameObject obj = rewards[idx];
+            Instantiate(obj, spawnPosition, Quaternion.identity);
+        }
     }
     public void GameStart()
     {
